@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Игнорировать все временные файлы Microsoft Word
+~$*.doc*
+
 # C extensions
 *.so
 
