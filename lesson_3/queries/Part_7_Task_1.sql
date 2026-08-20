@@ -15,8 +15,8 @@ with order_stats as (
 		count(o.order_id) as total_orders,
 		SUM(o.amount) as total_amount
 	from customers c 
-	join orders o on c.customer_id  = o.customer_id 
-	join shippings s on c.customer_id = s.customer 
+	cross join orders o on c.customer_id  = o.customer_id 
+	cross join shippings s on c.customer_id = s.customer 
 	group by c.first_name, c.last_name, c.country
 	having count(distinct o.order_id) >= 2
 		and count(case when s.status = 'Delivered' then 1 end) >= 1
