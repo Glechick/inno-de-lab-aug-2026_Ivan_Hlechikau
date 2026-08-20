@@ -17,5 +17,5 @@
 
 create or replace view IT_Department_View as
 	select *
-	from emloyees
+	from employees
 	where department = 'IT'

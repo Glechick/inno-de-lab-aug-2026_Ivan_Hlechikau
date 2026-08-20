@@ -17,7 +17,7 @@
 
 update employees
 set salary = '65000'
-where firstname = 'Alise' and  lastname = 'Smith'
+where firstname = 'Alice' and  lastname = 'Smith'
 
 select *
 from Employees

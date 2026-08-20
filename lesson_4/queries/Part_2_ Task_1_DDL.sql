@@ -1,23 +1,24 @@
--- Tnsert
---insert into Employees (FirstName, LastName, Department, Salary)
---values
---	('Dan', 'Jonson', 'HR', '55000'),
---	('Diana', 'Brown', 'Finance', '60000')
+-- Create
+--create table Departments (
+--    DepartmentID Serial primary key,
+--    DepartmentName VARCHAR(50) unique not null,
+--    location VARCHAR(50)
+--);
 
--- Select
---select *
---from Employees
+-- Alter
+--alter table employees add column Email VARCHAR(50);
 
--- Select with condition
---select 
---	e.firstname, 
---	e.lastname 
---from employees e 
---where e.department = 'IT'
+-- Update
+--update employees
+--set Email = Lower(firstname || '.' || lastname || '@company.com');
 
-update employees
-set salary = '65000'
-where firstname = 'Alise' and  lastname = 'Smith'
+-- Alter constraint
+--alter table employees
+--add constraint UQ_Email unique (Email);
+
+-- Alter rename
+--alter table departments
+--rename column location to OfficeLocation;
 
 select *
-from Employees
+from departments d;
