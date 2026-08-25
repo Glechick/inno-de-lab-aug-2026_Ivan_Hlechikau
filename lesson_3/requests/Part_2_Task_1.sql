@@ -1,8 +1,8 @@
 -- a list of orders together with the name of the customer who placed the order
 select 
-	c.first_name,
-	c.last_name,
+	o.order_id,
 	o.item,
-	o.amount
+	o.amount,
+	o.customer_id
 from orders o
-join customer c on o.customer_id = c.customer_id
+where o.amount > 1000
