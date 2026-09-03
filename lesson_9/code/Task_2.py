@@ -99,7 +99,8 @@ class Cohort:
         # Чтобы не использовался один и тот же список, а создавать разные для разных групп
         self.trainees = trainees if trainees is not None else []
 
-    def add_trainee(self, trainee: list[Trainee]) -> None:
+    def add_trainee(self, trainee: Trainee) -> None:
+        # Глупая ошибка, испаривл. Теперь Trainee
         '''
         Adds a trainee to the group.
         
