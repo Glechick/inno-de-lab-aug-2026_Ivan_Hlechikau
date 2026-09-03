@@ -32,7 +32,7 @@ max_RAM = max(s['ram_usage'] for s in filtred_data)
 # print(max_RAM)
 
 final_data = {
-    'active_node_count': len(filtred_data),
+    'active_nodes_count': len(filtred_data),
     'metrics':{
         'average_cpu': round(avg_CPU, 2),
         'max_ram': max_RAM

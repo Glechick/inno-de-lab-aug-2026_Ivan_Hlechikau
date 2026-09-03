@@ -16,7 +16,7 @@ port = connection.get('port', 'defoult_port')
 # Проверка вложенного ключа который "Есть"
 ssl_mode = connection.get('ssl_settings', {}).get('ssl_mode', 'verify-full')
 
-print(ssl_mode)
+print(f'SSL Mode: {ssl_mode}')
 
 connection['user'] = 'admin'
 

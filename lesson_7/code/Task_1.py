@@ -6,7 +6,7 @@ raw_user_record = " 10827 ; aLeXanDer_vLaDimiRov ; mInSk ; ACTIVE "
 clean_strings = [item.strip() for item in raw_user_record.split(';')]
 
 # Не особо понял то ворматирование или нет, но в лекции есть форматирование f-строкой
-print(f'UID-{clean_strings[0]}')
+# print(f'UID-{clean_strings[0]}')
 
 # Или полностью изменить
 # Преобразование имени
