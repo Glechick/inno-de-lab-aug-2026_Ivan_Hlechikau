@@ -1,6 +1,6 @@
 from const import MAX_RENTAL_BATCH_LIMIT
 
-def calculate_wholesale_costs (quantity: int, rental_rate: float, discount: float = 0) -> tuple[float, bool]:
+def calculate_wholesale_batch (quantity: int, rental_rate: float, discount: float = 0) -> tuple[float, bool]:
     '''
     Рассчитывает стоимость партии дисков для оптовой аренды с учетом скидки и проверяет превышение установленного лимита.
 
@@ -15,8 +15,6 @@ def calculate_wholesale_costs (quantity: int, rental_rate: float, discount: floa
     '''
 
     final_sum = round(quantity * rental_rate * (1 - discount), 2)
-
-    global MAX_RENTAL_BATCH_LIMIT
 
     is_limit_exceeded = final_sum > MAX_RENTAL_BATCH_LIMIT
 
@@ -38,7 +36,10 @@ def main():
 
     # Посмотрел способ с enumerate для красивого вывода номера, также можно сделать через range(len())
     for i, (title, qty, rate, disc) in enumerate(test_batches, start=1):
-        final_sum, is_limit_exceeded = calculate_wholesale_costs(qty, rate, disc)
+        final_sum, is_limit_exceeded = calculate_wholesale_batch(
+            quantity=qty, 
+            rental_rate=rate, 
+            discount=disc)
         print(f'Партия {i} {title}: Сумма {final_sum}$. Превышение лимита: {is_limit_exceeded}')
 
 

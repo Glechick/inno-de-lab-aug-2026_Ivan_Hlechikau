@@ -25,13 +25,11 @@ def calculate_overdue_fine (film_name: str, days_overdue: any, fine_rate: float)
         numeric_days = float(days_overdue)
 
         total_fine = numeric_days * fine_rate
-         
-        global DEFAULT_RETURN_INDEX_BASE
-        
+                 
         return_index = DEFAULT_RETURN_INDEX_BASE /numeric_days
 
         # Успешный расчет
-        print(f'Фильм: "{film_name}" | Итоговый штраф: {total_fine:.2f}$ | Индекс: {return_index:.2f}')
+        print(f'Фильм: "{film_name}" | Итоговый штраф: {total_fine:.1f}$ | Индекс: {return_index:.1f}')
         return total_fine, return_index
 
     except TypeError as e:

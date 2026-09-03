@@ -29,10 +29,7 @@ def performance_logger(func: callable) -> callable:
 
         result = func(*args, **kwargs)
 
-        global PERFORMANCE_LOG_PREFIX
-        global TIME_DECIMALS
-        
-        print(f'{PERFORMANCE_LOG_PREFIX} Функция "{func.__name__}" выполнена за <{(perf_counter() - start_time):.{TIME_DECIMALS}f}> сек.')
+        print(f'{PERFORMANCE_LOG_PREFIX} Функция "{func.__name__}" выполнена за {(perf_counter() - start_time):.{TIME_DECIMALS}f} сек.')
         return result
     return wrapper
 
